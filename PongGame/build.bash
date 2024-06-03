@@ -1,1 +1,1 @@
-g++ Ball.cpp main.cpp -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+g++ Score.cpp CPUPaddle.cpp Ball.cpp Paddle.cpp main.cpp -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
