@@ -74,3 +74,11 @@ void Paddle::LimitMovement(){
         m_y = GetScreenHeight() - m_height;
     }
 }
+
+void Paddle::setScore(int x){
+    m_score = x;
+}
+
+int Paddle::getScore(){
+    return m_score;
+}

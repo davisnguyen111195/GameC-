@@ -18,10 +18,13 @@ public:
     float getWidth();
     float getHeight();
     float getSpeed();
+    int getScore();
+    void setScore(int x);
 private:
     float m_x, m_y;
     float m_width, m_height;
     int m_speed;
+    int m_score;
 };
 
 #endif
