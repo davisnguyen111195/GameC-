@@ -1,5 +1,11 @@
 #include "Score.hpp"
 
+
+Score::Score(){
+    m_cpu_score = 0;
+    m_player_score = 0;
+}
+
 Score::Score(int player, int cpu) : m_player_score(player), m_cpu_score(cpu){
 
 }
@@ -12,7 +18,7 @@ int Score::getCPUScore(){
     return m_cpu_score;
 }
 
-void Score::setCPuScore(int y){
+void Score::setCPUScore(int y){
     m_cpu_score = y;
 }
 
