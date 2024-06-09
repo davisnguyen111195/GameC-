@@ -6,9 +6,12 @@ find_package(OpenGL REQUIRED)
 
 include_directories(${CMAKE_SOURCE_DIR}/include/)
 
+
 add_executable(my_opengl_project 
-    src/main.cpp
+    src/main3.cpp
     src/glad.c
+    src/general_fragment_shader.frag
+    src/general_vertex_shader.vert
 )
 
 target_link_libraries(my_opengl_project glfw)
