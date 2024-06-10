@@ -1,8 +1,8 @@
 #include <iostream>
+#include <fstream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <string>
-#include <fstream>
+#include "Shader.h"
 
 using namespace std;
 
@@ -45,14 +45,14 @@ void getInfo(){
 }
 
 string readShaderSource(string fileName){
-    ifstream inputFile(fileName); 
+    fstream inputFile(fileName); 
   
-    if (!inputFile.is_open()) { 
-        cout << "Error opening the file!" << endl; 
-        inputFile.close();
-        string error = "error";
-        return error;
-    } 
+    // if (!inputFile.is_open()) { 
+    //     cout << "Error opening the file!" << endl; 
+    //     inputFile.close();
+    //     string error = "error";
+    //     return error;
+    // } 
   
     string line; 
     string code = "";
@@ -64,6 +64,7 @@ string readShaderSource(string fileName){
     inputFile.close(); 
     return code;
 }
+
 
 int main(){
     if(init() == false){
@@ -104,11 +105,15 @@ int main(){
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-    string vertexSrc = readShaderSource("./general_vertex_shader.txt");
-    string fragmentSrc = readShaderSource("./general_fragment_shader.txt");
-
-    cout << vertexSrc << endl;
-    cout << fragmentSrc << endl;
+    // string vertexSrc = readShaderSource("./shaders/general_vertex_shader.vs");
+    // string fragmentSrc = readShaderSource("./shaders/general_fragment_shader.fs");
+    string vsPath = "/home/davidng/Downloads/KhoaCP/28Tech/CPP/Code/GameC++/GameC-/OpenGL/project1Test/shaders/general_vertex_shader.vs";
+    string fsPath = "/home/davidng/Downloads/KhoaCP/28Tech/CPP/Code/GameC++/GameC-/OpenGL/project1Test/shaders/general_fragment_shader.fs";
+    string vS = readShaderSource(vsPath);
+    string fS = readShaderSource(fsPath);
+    //Shader shader("/home/davidng/Downloads/KhoaCP/28Tech/CPP/Code/GameC++/GameC-/OpenGL/project1Test/shaders/general_vertex_shader.vs", "/home/davidng/Downloads/KhoaCP/28Tech/CPP/Code/GameC++/GameC-/OpenGL/project1Test/shaders/general_fragment_shader.fs");
+    cout << vS << endl;
+    cout << fS << endl;
     while(!glfwWindowShouldClose(window)){
 
         glClear(GL_COLOR_BUFFER_BIT);
