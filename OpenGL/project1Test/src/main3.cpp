@@ -107,8 +107,10 @@ int main(){
 
     // string vertexSrc = readShaderSource("./shaders/general_vertex_shader.vs");
     // string fragmentSrc = readShaderSource("./shaders/general_fragment_shader.fs");
-    string vsPath = "/home/davidng/Downloads/KhoaCP/28Tech/CPP/Code/GameC++/GameC-/OpenGL/project1Test/shaders/general_vertex_shader.vs";
-    string fsPath = "/home/davidng/Downloads/KhoaCP/28Tech/CPP/Code/GameC++/GameC-/OpenGL/project1Test/shaders/general_fragment_shader.fs";
+    string file{__FILE__};
+    string directory = file.substr(0, file.rfind("/"));
+    string vsPath = "./shaders/general_vertex_shader.vs";
+    string fsPath = "./shaders/general_fragment_shader.fs";
     string vS = readShaderSource(vsPath);
     string fS = readShaderSource(fsPath);
     //Shader shader("/home/davidng/Downloads/KhoaCP/28Tech/CPP/Code/GameC++/GameC-/OpenGL/project1Test/shaders/general_vertex_shader.vs", "/home/davidng/Downloads/KhoaCP/28Tech/CPP/Code/GameC++/GameC-/OpenGL/project1Test/shaders/general_fragment_shader.fs");
